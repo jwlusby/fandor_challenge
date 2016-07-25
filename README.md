@@ -5,7 +5,7 @@ This was my first attempt at using ReactJS to replicate the Festivals page on Fa
 In the interest of time, much of the CSS was lifted directly from the site. As was the Header and Footer bars. I focused my efforts mostly around implementing the Festivals listings and slideshow using the provided Festivals.json
 
 #Install required node_modules
-`npm instal`
+`npm install`
 
 #Building
 `npm run build`
