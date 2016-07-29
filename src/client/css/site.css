@@ -78,10 +78,8 @@ color:#5e5c58;
 
 
 .slideshowHeader{
-    background-color: rgb(94, 92, 88);
-	
-
-    padding: 0 0 0 0;
+	background-color: rgb(94, 92, 88);	
+	padding: 0 0 0 0;
 	margin: 0 0 0 0;
 }
 
@@ -89,6 +87,8 @@ color:#5e5c58;
 	background-color: rgb(94, 92, 88);
 	/*left: -950px;*/
 	height: 320px;
+	margin: 0;
+	padding: 0;
 }
 
 .myslider ul li {
@@ -104,31 +104,31 @@ color:#5e5c58;
 .sliderOverlayLeft{
 	position:absolute;
 	float: left;
-    left: -950px;
-    top:0;
+    	left: -950px;
+	top:0;
 	
-    background:transparent url(//d3uc4wuqnt61m1.cloudfront.net/assets/backgrounds/transparent-black-80-2b78a33981c4c224c01d5e7aa46d89d6.png) top left repeat;
+    	background:transparent url(//d3uc4wuqnt61m1.cloudfront.net/assets/backgrounds/transparent-black-80-2b78a33981c4c224c01d5e7aa46d89d6.png) top left repeat;
 	width:950px;
 	height:320px;
 	z-index:2;
     
-	margin-left:0px;
+	margin: 0;
+    	padding: 0;
 	
 }
 .sliderOverlayRight{
 	position:absolute;
 	float: right;
-    top: 0;
-    left: 950px;
-    
+    	top: 0;
+    	left: 950px;
     
 	background:transparent url(//d3uc4wuqnt61m1.cloudfront.net/assets/backgrounds/transparent-black-80-2b78a33981c4c224c01d5e7aa46d89d6.png) top left repeat;
 	width:950px;
 	height:320px;
 	z-index:2;
-    
-	/*margin-left:1900px;*/
-    ;
+	
+    	margin: 0;
+    	padding: 0;
 	
 }
 /************************************************************/
