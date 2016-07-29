@@ -1,4 +1,4 @@
-﻿import React from 'react';
+import React from 'react';
 
 class FestivalTile extends React.Component{
     constructor(props){
@@ -21,9 +21,20 @@ class FestivalTile extends React.Component{
         var style = 'column festival-tile '+this.props.style;
         var imgpath = this.props.thumbnail_path ? this.props.thumbnail_path : this.props.banner_path;
         var shortName = this.props.name;
-        if(this.props.name.indexOf(" ")>0){
-            shortName = this.props.name.substring(0,this.props.name.indexOf(' '));
+
+	if((new RegExp("South by Southwest Film Festival","i")).exec(this.props.name)!=null){
+		shortName = "SXSW";
+	}        
+	else if(((new RegExp("International Documentary Film Festival Amsterdam","i")).exec(this.props.name)!=null)){
+		shortName = "IDFA";
+	}
+        else {
+        
+        	shortName = this.props.name.replace(new RegExp("(International)|(Film)|(Festival)","ig"),"").trim();
+        	
         }
+        
+        
         var shortDescription = this.props.description;
         if(shortDescription.length>256){
             shortDescription = shortDescription.substring(0,225)+"...";

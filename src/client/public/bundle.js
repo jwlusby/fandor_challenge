@@ -21740,6 +21740,13 @@
 	                var marqueeFestivals = _festivals2.default.festivals.filter(function (f) {
 	                    return marqueeFestivalIds.indexOf(f.id) >= 0;
 	                });
+	
+	                marqueeFestivals = marqueeFestivals.sort(function (itemA, itemB) {
+	                    if (itemA.name > itemB.name) return 1;else if (itemA.name < itemB.name) return -1;else if (itemA.name == itemB.name) {
+	                        return 0;
+	                    }
+	                });
+	
 	                for (var x = 0; x < marqueeFestivals.length; x++) {
 	                    var festival = marqueeFestivals[x];
 	
@@ -21751,7 +21758,7 @@
 	
 	                    curRow.push(_react2.default.createElement(_FestivalTile2.default, { style: style, key: festival.id, id: festival.id, name: festival.name, description: festival.description, banner_path: festival.banner_path, thumnail_path: festival.thumnail_path, film_count: festival.film_count, url_name: festival.url_name }));
 	
-	                    if (isEnd || x == _festivals2.default.festivals.length - 1) {
+	                    if (isEnd || x == marqueeFestivals.length - 1) {
 	                        rows.push(curRow);
 	                        curRow = [];
 	                    }
@@ -31924,9 +31931,16 @@
 	            var style = 'column festival-tile ' + this.props.style;
 	            var imgpath = this.props.thumbnail_path ? this.props.thumbnail_path : this.props.banner_path;
 	            var shortName = this.props.name;
-	            if (this.props.name.indexOf(" ") > 0) {
-	                shortName = this.props.name.substring(0, this.props.name.indexOf(' '));
+	
+	            if (new RegExp("South by Southwest Film Festival", "i").exec(this.props.name) != null) {
+	                shortName = "SXSW";
+	            } else if (new RegExp("International Documentary Film Festival Amsterdam", "i").exec(this.props.name) != null) {
+	                shortName = "IDFA";
+	            } else {
+	
+	                shortName = this.props.name.replace(new RegExp("(International)|(Film)|(Festival)", "ig"), "").trim();
 	            }
+	
 	            var shortDescription = this.props.description;
 	            if (shortDescription.length > 256) {
 	                shortDescription = shortDescription.substring(0, 225) + "...";
